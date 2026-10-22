@@ -45,5 +45,9 @@ return {
         -- Enable theme
         require('onedark').load()
       end
-    }
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
 }
