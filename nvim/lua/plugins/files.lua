@@ -9,13 +9,17 @@ return {
         -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
+        keys = {
+            { "<leader>pv", "<cmd>Oil<CR>", desc = "Open Oil File Explorer" },
+        },
     },
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" }
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function() 
-            require("harpoon").setup({})
+            local harpoon = require("harpoon")
+            harpoon:setup({})
             vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
             vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
             vim.keymap.set("n", "<C-u>", function() harpoon:list():select(1) end)

@@ -22,7 +22,7 @@ return {
         "java",
         "rust",
         "go",
-        "verilog",
+        "systemverilog",
       }
 
       -- Install missing parsers asynchronously.
@@ -42,7 +42,7 @@ return {
         java = "java",
         rust = "rust",
         go = "go",
-        verilog = "verilog",
+        verilog = "systemverilog",
       }
 
       local group = vim.api.nvim_create_augroup(
